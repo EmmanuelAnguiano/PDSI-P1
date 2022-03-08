@@ -14,9 +14,13 @@ app.get('/', function(req, res) {
 });
 
 app.post('/ingreso', function(req, res) {
-   // res.send(`Has ingresado con el correo ${req.body.email} y con la contraseña ${req.body.pass}`)
    let pass=md5(req.body.pass)
    res.render('ingreso',{email: req.body.email, pass: pass})
 });
+
+app.post('/eliminar', function(req, res) {
+    //let pass=md5(req.body.pass)
+    res.render('eliminar',{email: req.body.email, pass: req.body.pass})
+ });
 
 app.listen(appConfig.port, ()=> console.log(`Puesto en marcha en puerto ${appConfig.port}`))
