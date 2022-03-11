@@ -13,14 +13,21 @@ app.get('/', function(req, res) {
     res.render('index');
 });
 
-app.post('/ingreso', function(req, res) {
+app.post('/validate', function(req, res) {
+   if(req.body.agregar==''){
+  // console.log(req.body)
    let pass=md5(req.body.pass)
    res.render('ingreso',{email: req.body.email, pass: pass})
+   }else{
+       let pass=(req.body.pass)
+    res.render('eliminar',{email: req.body.email, pass: pass}) 
+   }
 });
-
+/*
 app.post('/eliminar', function(req, res) {
     //let pass=md5(req.body.pass)
+    console.log(req.body)
     res.render('eliminar',{email: req.body.email, pass: req.body.pass})
  });
-
+*/
 app.listen(appConfig.port, ()=> console.log(`Puesto en marcha en puerto ${appConfig.port}`))
