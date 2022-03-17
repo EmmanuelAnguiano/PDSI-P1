@@ -18,6 +18,10 @@ app.get('/registro', function(req, res) {
     res.render('registro');
 });
 
+app.get('/dash', function(req, res){
+    res.render('dash');
+});
+
 app.post('/registroUser', function(req, res) {
     if(req.body.registro == ""){
         let pass  = /*md5*/(req.body.pass)
@@ -38,6 +42,18 @@ app.post('/auth', function(req, res) {
     let pass = /*md5*/(req.body.pass)
        res.render('ingreso', {correo: req.body.email, pass: pass});
        }else{
+           res.redirect('/registro')
+       }
+});
+
+app.post('/auth', function(req, res) {
+
+    if(req.body.sesion == ""){
+    let pass = /*md5*/(req.body.pass)
+        connection.query(`SELECT * FROM datos WHERE correo = "${req.body.email}", pass = "${req.body.pass}"`), function(err, res, fields){
+            res.redirect('/dash');
+        }
+    }else{
            res.redirect('/registro')
        }
 });
