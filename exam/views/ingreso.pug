@@ -1,0 +1,15 @@
+html 
+    head 
+        link(rel="stylesheet" href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css")
+        link(rel="stylesheet" href="https://getbootstrap.com/docs/5.0/examples/sign-in/signin.css")
+    div
+    form(action="/registroPeli" method="post") 
+        p Pelicula: 
+            input(type="text" name="titulo")
+        p descripcion: 
+            input(type="text" name="descripcion")
+        p fecha: 
+            input(type="text" name="fecha") 
+            br
+            br
+            button(class="btn btn-secondary" type="submit" name="agregar") Agregar

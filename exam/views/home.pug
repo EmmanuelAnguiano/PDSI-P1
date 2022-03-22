@@ -1,0 +1,22 @@
+hmtl
+    head
+        title Ingreso
+        link(rel="stylesheet" href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css")
+        link(rel="stylesheet" href="https://getbootstrap.com/docs/5.0/examples/sign-in/signin.css")
+    body
+        div
+            <p class="fst-italic"> Peliculas disponibles:
+            <p class="fst-italic"> La era de hielo
+            <p class="fst-italic"> Pitufos 
+            <p class="fst-italic"> Narnia
+            form(action="/registro" method="get")
+                div 
+                button(class="w-100 btn btn-lg btn-warning" type="submit" name="registro") Registrarme
+
+        div 
+            form(action="/ingreso" method="get")
+                button(class="w-100 btn btn-lg btn-primary" type="submit" name="ingreso") Ingresar peliculas
+        
+        div 
+            form(action="/regisp" method="get")
+                button(class="btn btn-info" type="submit" name="regisp") Pelis registradas 
