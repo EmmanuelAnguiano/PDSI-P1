@@ -22,7 +22,11 @@ app.get('/ingreso', function(req, res) {
 });
 
 app.get('/regisp', function(req, res) {
-    res.render('regisp');
+    connection.query('SELECT * FROM pelis' ,function(err, result, fields){
+        //console.log(result[0]['titulo'])     
+        res.render('regisp',{data:result});
+    })
+    
 });
 
 app.get('/404', function(req, res) {
@@ -64,10 +68,7 @@ app.post('/registroPeli', function(req, res) {
 
 app.post('/pelisr', function(req, res){
     connection.query('SELECT * FROM pelis' ,function(err, result, fields){
-            
-        if (err) throw err;
-        res.redirect('/')
-        
+        console.log('entro')     
     })
 });
 
