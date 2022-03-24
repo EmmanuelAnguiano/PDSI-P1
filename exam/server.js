@@ -23,8 +23,8 @@ app.get('/ingreso', function(req, res) {
 
 app.get('/regisp', function(req, res) {
     connection.query('SELECT * FROM pelis' ,function(err, result, fields){
-        //console.log(result[0]['titulo'])     
-        res.render('regisp',{data:result});
+       //console.log(result[0]['titulo'])     
+        res.render('regisp',{data:result})
     })
     
 });
@@ -65,13 +65,13 @@ app.post('/registroPeli', function(req, res) {
         
     })
 });
-
+/*
 app.post('/pelisr', function(req, res){
     connection.query('SELECT * FROM pelis' ,function(err, result, fields){
         console.log('entro')     
     })
 });
-
+*/
 app.post('/auth', function(req, res) {
     
     if(req.body.sesion == ""){

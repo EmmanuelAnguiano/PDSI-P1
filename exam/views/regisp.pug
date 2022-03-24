@@ -1,8 +1,23 @@
 html 
+body 
     div
-    form(action="/pelisr" method="post")
-        p Peliculas:
-        p peli #{titulo}
-        p descripcion #{descripcion}
-        p fecha #{fecha}
-        button(class="w-100 btn btn-lg btn-secundary" type="submit" name="back") Regresar
+    table(id="peliculas")
+        tr 
+            th titulo 
+            th descricion 
+            th fecha 
+        tbody(id='pelis')
+            tr 
+                th xx 
+                th xx 
+                th 12345
+    button(class="w-100 btn btn-lg btn-secundary" type="submit" name="back") Regresar            
+script.
+    var data = !{JSON.stringify(data)}
+    var contenido = ""
+
+    for(i=0; i<data.length; i++){
+        contenido += '<tr><th>' + data[i].titulo + '</th><th>' + data[i].descripcion + '</th><th>' + data[i].fecha + '</th></tr>'
+    }   
+
+    document.getElementById('pelis').innerHTML=contenido
